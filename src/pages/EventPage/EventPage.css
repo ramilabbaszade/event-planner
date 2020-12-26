@@ -1,0 +1,68 @@
+.eventpage_head {
+  background: white;
+}
+.eventpage_header__date {
+  color: red;
+  font-weight: 500;
+}
+.eventpage_image img {
+  width: 100%;
+  height: 22rem;
+}
+.eventpage_header__title {
+  font-size: 26px;
+  font-weight: 800;
+}
+.eventpage_header__location {
+  opacity: 0.5;
+}
+
+.eventpage_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.eventpage_nav__buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/*Event info about*/
+
+.eventpage_info{
+    margin-top: 1rem;
+}
+.eventpage_info__grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 10px;
+}
+.eventpage_info__left, .eventpage_info__right__find_ticket{
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #f1f1f1;
+    height: min-content;
+}
+.eventpage_info__left_details_item{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+.eventpage_nav__organiser{
+  display: flex;
+  align-items: center;
+}
+.eventpage_nav__organiser img{
+  width: 50px;
+  height: 50px;
+}
+
+iframe{
+    border-radius: 8px;
+    border: 1px solid rgba(190, 190, 190, 0.472);
+    height: 350px;
+}

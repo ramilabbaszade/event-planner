@@ -1,0 +1,21 @@
+header{
+    box-shadow: rgba(202, 202, 202, 0.233) .5px 2px 5px 1px;
+    background: white;
+}
+.header_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 1rem;
+}
+.header_search input{
+    width: 30rem;
+    padding: .8rem 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 15px;
+}
+.header_navlinks{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}

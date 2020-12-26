@@ -1,0 +1,45 @@
+.user-account__cover{
+    height: 20vh;
+    background:  #00B2B3;
+}
+.user-account__container{
+    background: white;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 0 1rem; 
+}
+
+.user-account__side{
+    position: relative;
+}
+.user-account__side_profile{
+    position: relative;
+    top: -3rem;
+}
+.user-account__side_profile img{
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: rgba(182, 182, 182, 0.486) 0px 2px 5px 0px;
+}
+
+/*Main*/
+.user-account__main{
+    margin-top: 1rem;
+}
+.user-account__main_account_buttons{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.user-account_main_events_container h3{
+    margin: 1rem 0;
+}
+.user-account_main_events{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 5px;
+    grid-row-gap: 1rem;
+}
