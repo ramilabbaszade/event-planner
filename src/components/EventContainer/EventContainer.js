@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "@material-ui/core/Icon";
 import { Link } from "react-router-dom";
+import CPhoto from "../../assets/mainImg.jpeg";
 
 import "./EventContainer.css";
 
@@ -9,7 +10,7 @@ const EventContainer = ({ title, picture, id, date, author }) => {
     <div key={id} className="event_container">
       <div className="event_image">
         <Link to="/">
-          <img src={picture} alt={title} />
+          <img src={picture || CPhoto} alt={title} />
         </Link>
       </div>
       <div className="event-body">

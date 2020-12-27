@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Container from "@material-ui/core/Container";
-import Icon from "@material-ui/core/Icon";
-import CLogo from "../../assets/logoL.png";
+import CLogo from "../../assets/logoL.png"
+import CPhoto from "../../assets/mainImg.jpeg";
+
+import IconButton from "../../shared/UIElements/IconButton";
 
 import "./EventPage.css";
 
@@ -26,20 +28,18 @@ const EventPage = () => {
   };
   return (
     <React.Fragment>
-      (
       <div className="eventpage">
         <div className="eventpage_head">
           <Container maxWidth="md">
             <div className="eventpage_image">
-              <img
-                src={events.date}
-                alt={events.title}
-              />
+              <img src={`https://event-p.herokuapp.com${events.picture}`|| CPhoto} alt={events.title} />
             </div>
             <div className="eventpage_header">
               <div className="eventpage_header__date">{events.date}</div>
               <div className="eventpage_header__title">{events.title}</div>
-              <div className="eventpage_header__location">{events.location}</div>
+              <div className="eventpage_header__location">
+                {events.location}
+              </div>
               <hr />
             </div>
             <div className="eventpage_nav">
@@ -51,21 +51,13 @@ const EventPage = () => {
                 </div>
               </div>
               <div className="eventpage_nav__buttons">
-                <div className="btn">
-                  <Icon style={{ fontSize: 16 }} color="primary">
-                    favorite
-                  </Icon>{" "}
-                  Interesting
-                </div>
-                <div className="btn">
-                  <Icon style={{ fontSize: 16 }} color="primary">
-                    check
-                  </Icon>{" "}
-                  Going
-                </div>
-                <div className="btn">
-                  <Icon style={{ fontSize: 16 }}>share</Icon>{" "}
-                </div>
+                <IconButton
+                  title="Interesting"
+                  color="primary"
+                  icon="favorite"
+                />
+                <IconButton title="Going" icon="check" />
+                <IconButton icon="share" />
               </div>
             </div>
           </Container>
@@ -76,15 +68,16 @@ const EventPage = () => {
               <div className="eventpage_info__left">
                 <div className="eventpage_info__left_details">
                   <div className="eventpage_info__left_details_item">
-                    <Icon style={{ fontSize: 16 }}>assignment</Icon> 200 persons
-                    responsed
+                    <IconButton
+                      title="200 persons responsed"
+                      icon="assignment"
+                    />
                   </div>
                   <div className="eventpage_info__left_details_item">
-                    <Icon style={{ fontSize: 16 }}>flight takeoff</Icon>{" "}
-                    {events.location}
+                    <IconButton title={events.location} icon="flight takeoff" />
                   </div>
                   <div className="eventpage_info__left_details_item">
-                    <Icon style={{ fontSize: 16 }}>label</Icon> Tickets 10$
+                    <IconButton title="Tickets 10$" icon="label" />
                   </div>
                   <div className="eventpage_info__left_details_item">
                     {events.description}
@@ -94,11 +87,8 @@ const EventPage = () => {
               <div className="eventpage_info__right">
                 <div className="eventpage_info__right__find_ticket">
                   <h2>Tickets</h2>
-                  <div style={{ margin: "1rem 0" }} className="btn">
-                    <Icon style={{ fontSize: 16 }} color="primary">
-                      launch
-                    </Icon>{" "}
-                    Find Ticket
+                  <div style={{ margin: "1rem 0" }}>
+                    <IconButton title="Find Ticket" icon="launch" />
                   </div>
                 </div>
                 <div
@@ -119,7 +109,6 @@ const EventPage = () => {
           </Container>
         </div>
       </div>
-      );
     </React.Fragment>
   );
 };

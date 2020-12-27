@@ -2,23 +2,20 @@ import React, {useState, useEffect} from "react";
 import EventContainer from "../../components/EventContainer/EventContainer";
 
 import imageURL from "../../assets/mainImg.jpeg";
-import { DATA } from "../../dummy";
 
 import "./Home.css";
 
 const Home = () => {
   const [events, setEvents] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     getEvents();
-  }, [setEvents, setIsLoading]);
+  }, [setEvents]);
   const getEvents = () => {
     fetch("https://event-p.herokuapp.com/eventapi/")
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
         setEvents(data);
-        setIsLoading(false);
       })
       .catch((err) => console.log(err));
   };
@@ -50,7 +47,7 @@ const Home = () => {
           <section className="recently-added">
             <h2>Near Events</h2>
             <div className="home_main__grid">
-              {DATA.map((item) => {
+              {events.slice(0,6).map((item) => {
                 return (
                   <EventContainer
                     key={item.id}
